@@ -3,7 +3,7 @@
 ## Install
 
 ```bash
-pip3 install speedtest-cli
+pip3 install -r requirements.txt
 ```
 
 ## Usage
