@@ -2,7 +2,7 @@ import speedtest
 
 def get_speed_test_results():
     # Create a Speedtest object
-    st = speedtest.Speedtest()
+    st = speedtest.Speedtest(secure=True)
     
     # Get the best server for testing
     st.get_best_server()
