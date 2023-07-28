@@ -18,12 +18,20 @@ def get_speed_test_results():
     
     return download_speed, upload_speed, ping_time
 
+def format_speed(speed):
+    if speed >= 1000:
+        return f"{speed/1000:.2f} GB/s"
+    elif speed >= 1:
+        return f"{speed:.2f} MB/s"
+    else:
+        return f"{speed*1000:.2f} Mbps"
+
 def main():
     print("Running Speed Test...")
     download_speed, upload_speed, ping_time = get_speed_test_results()
 
-    print(f"Download Speed: {download_speed:.2f} Mbps")
-    print(f"Upload Speed: {upload_speed:.2f} Mbps")
+    print("Download Speed:", format_speed(download_speed))
+    print("Upload Speed:", format_speed(upload_speed))
     print(f"Ping Time: {ping_time} ms")
 
 if __name__ == "__main__":
