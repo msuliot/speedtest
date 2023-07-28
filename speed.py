@@ -1,7 +1,7 @@
 import speedtest
 
 def get_speed_test_results():
-    st = speedtest.Speedtest(secure=True)
+    st = speedtest.Speedtest(secure=True) # added secure because of 403 error
     st.get_best_server()
     download_speed = st.download() / 1_000_000  # Convert to Mbps
     upload_speed = st.upload() / 1_000_000  # Convert to Mbps
