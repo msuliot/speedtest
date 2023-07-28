@@ -1,19 +1,10 @@
 import speedtest
 
 def get_speed_test_results():
-    # Create a Speedtest object
     st = speedtest.Speedtest(secure=True)
-    
-    # Get the best server for testing
     st.get_best_server()
-    
-    # Perform the download speed test
     download_speed = st.download() / 1_000_000  # Convert to Mbps
-    
-    # Perform the upload speed test
     upload_speed = st.upload() / 1_000_000  # Convert to Mbps
-    
-    # Get ping (latency) time
     ping_time = st.results.ping
     
     return download_speed, upload_speed, ping_time
